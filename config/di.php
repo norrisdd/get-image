@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: danieln
+ * User: Daniel Norris
  * Date: 9/18/18
  * Time: 8:26 PM
  */
 
-// Pimple-compatible class setup definitions
+// Pimple-compatible class setup definitions, required directly inside index.php
 
 $container[\GetImage\Controller::class] = function($container) {
     return new \GetImage\Controller($container);
