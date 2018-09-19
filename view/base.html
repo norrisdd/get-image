@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Images!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/get-image.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="/result" method="post">
+            <div class="row">
+                <div class="col">
+                    <h2>List Images</h2>
+                    <div class="form-group">
+                        <input type="text" placeholder="Enter URL" aria-describedby="targetUrlHelp" class="form-control" id="targetUrl" name="targetUrl" value="{{ targetUrl }}">
+                        <small id="targetUrlHelp" class="form-text text-muted">Enter a valid URL and click Submit to list the images on that page.</small>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        {% if results is defined %}
+            <div class="row">
+                <div class="col">
+                    <h2>Results</h2>
+                </div>
+            </div>
+            {% for result in results %}
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <img src="{{ result }}" class="mr-3 image" />
+                </div>
+                <div class="col-12 col-sm-6 col-md-9">
+                    <p><a href="{{ result }}}">{{ result }}</a></p>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "norrisdd/get-image",
+  "description": "A simple webpage for pulling images from a target URL",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Daniel Norris",
+      "email": "daniel.norris11235@gmail.com"
+    }
+  ],
+  "require": {
+    "paquettg/php-html-parser": "^1.7",
+    "twig/twig": "^2.5",
+    "slim/slim": "^3.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "GetImage\\": "app"
+    }
+  }
+}
