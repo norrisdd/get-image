@@ -1,7 +1,7 @@
 # get-image
 A sample website application that accepts a URL on a form and returns a list of all images found on that page.
 
-**Note**: The application does not take into account Javascript manipulation of the DOM, so sites heavily using frontend libraries such as Angular will not work with this.
+**Note**: The application does not take into account Javascript manipulation of the DOM, so sites heavily using frontend libraries such as Angular will not work as expected.
 
  ## Libraries used
  - Slim Framework
@@ -10,7 +10,7 @@ A sample website application that accepts a URL on a form and returns a list of 
  - Twitter Bootstrap (and dependencies)
  
  ## Installation
- 1. PHP 7 is required with php-curl and php-mbstring packages.
+ 1. PHP 7 is required (I use PHP 7.2) with php-curl, php-zip and php-mbstring packages.
  
  2. Install composer and run ``composer install`` in the base directory of the code checkout.
  
